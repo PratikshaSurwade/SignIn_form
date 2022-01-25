@@ -34,7 +34,7 @@ app.post("/sign_up",(req,res) => {
         if(err){
             throw err;
         }
-        console.log("Record Inserter Successfully")
+        console.log("Record Inserted Successfully")
     });
 
     return res.redirect('sigunup_sucess.html')
