@@ -1,6 +1,7 @@
 body{
     background-color: rgb(236, 236, 236);
 }
+
 .login{
     width: 100%;
     height: calc(100vh - 50px);
@@ -8,31 +9,35 @@ body{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    
 }
+
 .loginTitle{
     font-size: 3rem;
 }
+
 .loginForm{
     margin-top: 1.2rem;
     display: flex;
     flex-direction: column;
     width: 20rem;
 }
+
 .loginForm>label{
     margin:0.8rem 0;
 }
+
 .loginInput{
     padding:0.8rem;
     background-color: white;
     border: none;
 }
+
 .loginButton{
     margin-top: 1.4rem;
     cursor: pointer;
     background-color: lightcoral;
     border: none;
     color: white;
-    border-radius:0.7rem ;
+    border-radius:0.7rem;
     padding: 0.9rem
 }
