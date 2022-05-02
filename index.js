@@ -37,14 +37,15 @@ app.post("/sign_up",(req,res) => {
         console.log("Record Inserted Successfully")
     });
 
-    return res.redirect('sigunup_sucess.html')
+    
+    return res.redirect('public/sigunup_sucess.html')
 })
 
 app.get("/", (req , res ) => {
     res.set({
         "Allow-access-Allow-Origin":"*"
     })
-    return res.redirect('index.html');
+    return res.redirect('public/index.html');
 })
 
-app.listen(3000);
+app.listen(8000);
