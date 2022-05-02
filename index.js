@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 
 const app = express();
+
+dotenv.config();
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -10,7 +13,15 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-mongoose.connect('mongodb://localhost:27017/mydb');
+// mongoose.connect('mongodb://localhost:27017/mydb');
+
+// mongoose.connect('mongodb+srv://signindata:signindata@cluster0.rhw5e.mongodb.net/signindata?retryWrites=true&w=majority');
+
+mongoose
+    .connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }) 
 
 const db = mongoose.connection;
 
@@ -38,7 +49,7 @@ app.post("/sign_up",(req,res) => {
     });
 
     
-    return res.redirect('public/sigunup_sucess.html')
+    return res.redirect('/signup_sucess.html')
 })
 
 app.get("/", (req , res ) => {
